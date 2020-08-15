@@ -1,2 +1,1 @@
-# Hesap-Makinesi-Python
-Bildiğin Hesap Makinesi...
+Ben ve agalar python öğreniyor
