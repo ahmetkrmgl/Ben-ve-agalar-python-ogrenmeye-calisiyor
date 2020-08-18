@@ -1,4 +1,10 @@
 import random
+import os
+def temizle():
+    if os.name=="nt":
+        os.system("cls")
+    else:
+        os.system("clear")
 f=open("kelimeler.txt","r")
 kelimeler=f.readlines()
 f.close()
@@ -8,13 +14,14 @@ def oyunuoyna():
     puan = 0
     tahmindeneme = []
     while seçim=="e":
+        temizle()
         kelime=kelimeler[random.randint(0,len(kelimeler)-1)]
         kelimeliste=[]
         uzunluk=len(kelime)-1
         for i in range(uzunluk):
             kelimeliste.append(kelime[i])
         tahmin=[]
-        hak = 15
+        hak = uzunluk
         for i in range(uzunluk):
             tahmin.append("_ ")
         print("Kelimemiz",uzunluk,"harfli")
@@ -24,15 +31,14 @@ def oyunuoyna():
                 if harf==kelime[i]:
                     tahmin.pop(i)
                     tahmin.insert(i,harf)
-            print("--------Tahmin Etmek İçin \"tahmin\" yazın--------")
             print(tahmin)
+            print("--------Tahmin Etmek İçin \"tahmin\" yazın--------")
             if harf=="tahmin":
                 tahmingirişi=input("Tahmininizi Giriniz:")
                 tahmingirişiliste=[]
                 for i in range(len(tahmingirişi)):
                     tahmingirişiliste.append(tahmingirişi[i])
                 if tahmingirişiliste==kelimeliste:
-                    print("tahmininiz doğru.......")
                     for i in range(uzunluk):
                         tahmin.pop(i)
                         tahmin.insert(i,tahmingirişiliste[i])
@@ -41,8 +47,8 @@ def oyunuoyna():
                     print("tahmininiz yanlış......")
                     puan=puan-uzunluk*5
             if tahmin==kelimeliste:
-                print("Tebrikler Bildiniz :) :)")
-                print("Kelimemiz",kelime)
+                print("Tebrikler Bildiniz...")
+                print("Kelimemiz:",kelime,)
                 seçim=input("Tekrar Oynamak İster Misiniz [e/h]:")
             if hak==0:
                 print("Malesef Tahmin Hakkınız Bitti....")
@@ -51,11 +57,13 @@ def oyunuoyna():
                 break
             print(hak,"Hakkınız Kaldı")
             hak=hak-1
+    anamenü()
     print("puanınız:")
     print(puan)
     print("çıkış yaptınız....")
     quit()
 def anamenü():
+    temizle()
     print("_"*50)
     print(" "*48,)
     print("[1] Oyunu Oyna"," "*34)
@@ -70,6 +78,7 @@ def anamenü():
         anamenü()
     return anamenüseçim
 def kelimeekle():
+    temizle()
     kelimeekleme="a"
     while kelimeekleme!="1":
         kelimeekleseçim=0
@@ -90,4 +99,3 @@ elif anamenüseçim=="2":
     kelimeekle()
 elif anamenüseçim=="3":
     quit()
-
