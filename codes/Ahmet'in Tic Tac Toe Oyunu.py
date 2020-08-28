@@ -1,14 +1,9 @@
 secim,x="devam et",0
 oyuntahtası=[1,2,3,4,5,6,7,8,9]
-import os
-def temizle():
-    if os.name=="nt":
-        os.system("cls")
-    else:
-        os.system("clear")
+import temizle
 def ekranayaz():
     global oyuntahtası
-    temizle()
+    temizle.temizle()
     print("\n",oyuntahtası[0]," ",oyuntahtası[1]," ",oyuntahtası[2],"\n",
 oyuntahtası[3]," ",oyuntahtası[4]," ",oyuntahtası[5],"\n",
 oyuntahtası[6]," ",oyuntahtası[7]," ",oyuntahtası[8],"\n")
@@ -86,7 +81,7 @@ while secim !="durdur":
             oyuntahtası.remove(i+1)
         for i in range(9):
             oyuntahtası.append(i+1)
-        temizle()
+        temizle.temizle()
         x=0
         secim=" "
     elif secim==" ":

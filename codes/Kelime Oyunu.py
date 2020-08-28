@@ -1,10 +1,5 @@
 import random
-import os
-def temizle():
-    if os.name=="nt":
-        os.system("cls")
-    else:
-        os.system("clear")
+import temizle
 f=open("kelimeler.txt","r")
 kelimeler=f.readlines()
 f.close()
@@ -14,7 +9,7 @@ def oyunuoyna():
     puan = 0
     tahmindeneme = []
     while seçim=="e":
-        temizle()
+        temizle.temizle()
         kelime=kelimeler[random.randint(0,len(kelimeler)-1)]
         kelimeliste=[]
         uzunluk=len(kelime)-1
@@ -63,7 +58,7 @@ def oyunuoyna():
     print("çıkış yaptınız....")
     quit()
 def anamenü():
-    temizle()
+    temizle.temizle()
     print("_"*50)
     print(" "*48,)
     print("[1] Oyunu Oyna"," "*34)
@@ -78,7 +73,7 @@ def anamenü():
         anamenü()
     return anamenüseçim
 def kelimeekle():
-    temizle()
+    temizle.temizle()
     kelimeekleme="a"
     while kelimeekleme!="1":
         kelimeekleseçim=0
