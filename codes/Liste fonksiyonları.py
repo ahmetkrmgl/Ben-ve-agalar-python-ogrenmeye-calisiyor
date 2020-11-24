@@ -29,6 +29,6 @@ tuple[-2] #sondan ikinci
 dict = {"elma":"apple","arda":"mal"}
 dict[elma] #apple
 dict[olmayan kelime] #ekleme
-del dict[kelime]
+del dict[kelime] #sil
 string.split(işaret,sayı) #kelimelere ayırma
 ("ahmet#batın#arda#arif")
