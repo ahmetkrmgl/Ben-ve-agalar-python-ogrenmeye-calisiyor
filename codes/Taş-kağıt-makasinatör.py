@@ -86,3 +86,4 @@ while "olur" in secim or "tamam" in secim or "evet" in secim or "tabii" in secim
         elif bilgisayarpuan==3:
             print("Haha! N'aber yenilen pehlivan, doydun mu bakalım güreşe?","\n")
             break
+print("kazandınız")
